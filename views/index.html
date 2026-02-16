@@ -3,66 +3,447 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CELULEX | Tienda de Celulares</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <title>CELULEX | Tecnología a tu alcance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm sticky-top">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container d-flex justify-content-between align-items-center">
+        <span><i class="bi bi-phone me-2"></i>¡Los mejores precios en tecnología!</span>
+        <div class="d-flex gap-3">
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#">CELULEX</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <a class="navbar-brand fw-bold fs-3 brand-text" href="#">
+          <i class="bi bi-laptop me-2"></i>CELULEX
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="menu">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-            <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
-            <li class="nav-item"><a class="nav-link" href="/admin">Administrador</a></li>
-            <li class="nav-item"><a class="btn btn-primary btn-sm" href="#catalogo">Comprar ahora</a></li>
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#celulares">Celulares</a></li>
+            <li class="nav-item"><a class="nav-link" href="#computadoras">Computadoras</a></li>
+            <li class="nav-item"><a class="nav-link" href="#accesorios">Accesorios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
           </ul>
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-link text-dark p-0" data-bs-toggle="modal" data-bs-target="#searchModal">
+              <i class="bi bi-search fs-5"></i>
+            </button>
+            <button id="cart-btn" class="btn btn-primary position-relative">
+              <i class="bi bi-cart3"></i>
+              <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            </button>
+            <a href="/admin" class="btn btn-outline-dark btn-sm"><i class="bi bi-person-gear me-1"></i>Admin</a>
+          </div>
         </div>
       </div>
     </nav>
 
-    <header class="hero py-5">
-      <div class="container py-4">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-6">
-            <span class="badge text-bg-primary mb-3">Tienda profesional y segura</span>
-            <h1 class="display-5 fw-bold">Encuentra tu próximo celular al mejor precio</h1>
-            <p class="lead text-secondary">
-              Modelos premium, gama media y económicos de todas las marcas. Compra rápida con atención personalizada.
-            </p>
-            <a href="#catalogo" class="btn btn-dark btn-lg">Ver catálogo</a>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container position-relative">
+        <div class="row align-items-center min-vh-75">
+          <div class="col-lg-7">
+            <span class="badge bg-white text-primary px-4 py-2 mb-3 fw-semibold">
+              <i class="bi bi-lightning-charge-fill me-1"></i> Envío gratis en pedidos mayores a $500
+            </span>
+            <h1 class="display-2 fw-bold mb-4">La tecnología que <span>buscas</span>, al mejor precio</h1>
+            <p class="lead mb-4 opacity-75">Descubre nuestra amplia gama de celulares, laptops, tablets y accesorios. Calidad garantizada con atención personalizada.</p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="#celulares" class="btn btn-primary btn-lg px-5 fw-semibold">Ver Catálogo</a>
+              <a href="#contacto" class="btn btn-outline-light btn-lg px-5 fw-semibold">
+                <i class="bi bi-whatsapp me-2"></i>WhatsApp
+              </a>
+            </div>
+            <div class="d-flex gap-4 mt-5">
+              <div class="text-center">
+                <div class="fs-3 fw-bold text-white">5000+</div>
+                <div class="small opacity-75">Clientes satisfechos</div>
+              </div>
+              <div class="text-center">
+                <div class="fs-3 fw-bold text-white">98%</div>
+                <div class="small opacity-75">Evaluación positiva</div>
+              </div>
+              <div class="text-center">
+                <div class="fs-3 fw-bold text-white">50+</div>
+                <div class="small opacity-75">Marcas disponibles</div>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-6">
-            <div class="hero-card p-4 rounded-4">
-              <h2 class="h4">¿Por qué CELULEX?</h2>
-              <ul class="mb-0 mt-3">
-                <li>Garantía en todos los equipos</li>
-                <li>Entrega nacional</li>
-                <li>Asesoría para elegir el celular ideal</li>
-              </ul>
+          <div class="col-lg-5 d-none d-lg-block">
+            <div class="hero-showcase">
+              <div class="hero-card-floating hero-card-1">
+                <div class="hero-card-icon">
+                  <i class="bi bi-phone"></i>
+                </div>
+                <div class="hero-card-text">
+                  <span class="hero-card-title">Celulares</span>
+                  <span class="hero-card-sub">iPhone, Samsung</span>
+                </div>
+              </div>
+              <div class="hero-card-floating hero-card-2">
+                <div class="hero-card-icon">
+                  <i class="bi bi-laptop"></i>
+                </div>
+                <div class="hero-card-text">
+                  <span class="hero-card-title">Laptops</span>
+                  <span class="hero-card-sub">MacBook, Dell, HP</span>
+                </div>
+              </div>
+              <div class="hero-card-floating hero-card-3">
+                <div class="hero-card-icon">
+                  <i class="bi bi-tablet"></i>
+                </div>
+                <div class="hero-card-text">
+                  <span class="hero-card-title">Tablets</span>
+                  <span class="hero-card-sub">iPad, Galaxy Tab</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main id="catalogo" class="container py-5">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-0">Catálogo de celulares</h2>
-        <span id="counter" class="badge text-bg-secondary">0 productos</span>
+    <!-- Features -->
+    <section class="features-section py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card p-4 text-center">
+              <div class="feature-icon mb-3">
+                <i class="bi bi-truck"></i>
+              </div>
+              <h5>Envío Express</h5>
+              <p class="mb-0 text-muted">Entrega en 24-48 horas a todo el país</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card p-4 text-center">
+              <div class="feature-icon mb-3">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h5>Garantía Oficial</h5>
+              <p class="mb-0 text-muted">Todos los productos con garantía del fabricante</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card p-4 text-center">
+              <div class="feature-icon mb-3">
+                <i class="bi bi-headset"></i>
+              </div>
+              <h5>Soporte 24/7</h5>
+              <p class="mb-0 text-muted">Atención personalizada cuando la necesites</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="products" class="row g-4"></div>
-    </main>
+    </section>
 
-    <footer class="py-4 border-top">
-      <div class="container text-center text-secondary small">© 2026 CELULEX. Todos los derechos reservados.</div>
+    <!-- Categories -->
+    <section class="py-5">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="fw-bold mb-0">Categorías</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-6 col-lg-3">
+            <a href="#celulares" class="category-card text-decoration-none">
+              <div class="category-icon"><i class="bi bi-phone"></i></div>
+              <h5>Celulares</h5>
+              <span class="small text-muted">iPhone, Samsung, Xiaomi...</span>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="#computadoras" class="category-card text-decoration-none">
+              <div class="category-icon"><i class="bi bi-laptop"></i></div>
+              <h5>Laptops</h5>
+              <span class="small text-muted">Gaming, Oficina, MacBook...</span>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="#computadoras" class="category-card text-decoration-none">
+              <div class="category-icon"><i class="bi bi-pc-display"></i></div>
+              <h5>PC de Escritorio</h5>
+              <span class="small text-muted">Gaming, Workstation...</span>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="#accesorios" class="category-card text-decoration-none">
+              <div class="category-icon"><i class="bi bi-headphones"></i></div>
+              <h5>Accesorios</h5>
+              <span class="small text-muted">Cargadores, Cases, Audífonos...</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="celulares" class="products-section py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 mb-2">Lo más vendido</span>
+          <h2 class="fw-bold display-5">Celulares Destacados</h2>
+          <p class="text-muted">Los últimos modelos de las mejores marcas</p>
+        </div>
+        <div class="row g-4" id="products"></div>
+      </div>
+    </section>
+
+    <!-- Banner Promo -->
+    <section class="promo-section py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h2 class="fw-bold display-5 mb-3">¿Necesitas ayuda para elegir?</h2>
+            <p class="lead mb-4">Nuestro equipo de expertos está listo para asesorarte y ayudarte a encontrar el dispositivo perfecto para ti.</p>
+            <div class="d-flex gap-3">
+              <a href="#contacto" class="btn btn-light btn-lg fw-semibold">
+                <i class="bi bi-chat-dots me-2"></i>Chatear ahora
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-5 d-none d-lg-block">
+            <div class="promo-stats">
+              <div class="stat-item">
+                <i class="bi bi-clock-history"></i>
+                <div>
+                  <div class="fw-bold">Respuesta en minutos</div>
+                  <small>Atención inmediata</small>
+                </div>
+              </div>
+              <div class="stat-item">
+                <i class="bi bi-calendar-check"></i>
+                <div>
+                  <div class="fw-bold">Horarios extensos</div>
+                  <small>Lunes a Sábado</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- More Products Grid -->
+    <section id="computadoras" class="py-5">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2 class="fw-bold mb-1">Computadoras y Laptops</h2>
+            <p class="text-muted mb-0">Potencia y rendimiento para trabajo y gaming</p>
+          </div>
+          <a href="#" class="btn btn-outline-primary">Ver todos <i class="bi bi-arrow-right ms-1"></i></a>
+        </div>
+        <div class="row g-4" id="laptops-grid">
+          <div class="col-md-6 col-lg-4">
+            <div class="product-card-modern">
+              <div class="product-badge">Nuevo</div>
+              <div class="product-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80" alt="MacBook Pro" />
+              </div>
+              <div class="product-info">
+                <span class="product-brand">Apple</span>
+                <h5 class="product-name">MacBook Pro 14" M3</h5>
+                <p class="product-desc">Chip M3 Pro, 18GB RAM, 512GB SSD</p>
+                <div class="product-price">$1,999</div>
+                <button class="btn btn-primary w-100" onclick='addToCartProduct(101, "MacBook Pro 14 M3", "Apple", 1999, 5, "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80", "Chip M3 Pro, 18GB RAM")'>Agregar al Carrito</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="product-card-modern">
+              <div class="product-badge bg-success">-15%</div>
+              <div class="product-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=500&q=80" alt="Dell XPS" />
+              </div>
+              <div class="product-info">
+                <span class="product-brand">Dell</span>
+                <h5 class="product-name">Dell XPS 15</h5>
+                <p class="product-desc">Intel i7, 16GB RAM, 512GB SSD, RTX 4050</p>
+                <div class="product-price">$1,499 <small class="text-decoration-line-through text-muted">$1,799</small></div>
+                <button class="btn btn-primary w-100" onclick='addToCartProduct(102, "Dell XPS 15", "Dell", 1499, 3, "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=500&q=80", "Intel i7, 16GB RAM, RTX 4050")'>Agregar al Carrito</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="product-card-modern">
+              <div class="product-badge bg-warning text-dark">Best Seller</div>
+              <div class="product-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&q=80" alt="Lenovo ThinkPad" />
+              </div>
+              <div class="product-info">
+                <span class="product-brand">Lenovo</span>
+                <h5 class="product-name">ThinkPad X1 Carbon</h5>
+                <p class="product-desc">Intel i7, 32GB RAM, 1TB SSD</p>
+                <div class="product-price">$1,299</div>
+                <button class="btn btn-primary w-100" onclick='addToCartProduct(103, "ThinkPad X1 Carbon", "Lenovo", 1299, 4, "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&q=80", "Intel i7, 32GB RAM")'>Agregar al Carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessories -->
+    <section id="accesorios" class="py-5 bg-light">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2 class="fw-bold mb-1">Accesorios</h2>
+            <p class="text-muted mb-0">Todo lo que necesitas para tu dispositivo</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-6 col-lg-3">
+            <div class="accessory-card text-center p-4">
+              <i class="bi bi-headphones fs-1 text-primary mb-3"></i>
+              <h6>Audífonos</h6>
+              <a href="#" class="small text-primary">Ver 24 productos</a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="accessory-card text-center p-4">
+              <i class="bi bi-battery-charging fs-1 text-success mb-3"></i>
+              <h6>Cargadores</h6>
+              <a href="#" class="small text-primary">Ver 18 productos</a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="accessory-card text-center p-4">
+              <i class="bi bi-phone-flip fs-1 text-info mb-3"></i>
+              <h6>Fundas</h6>
+              <a href="#" class="small text-primary">Ver 36 productos</a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="accessory-card text-center p-4">
+              <i class="bi bi-smartwatch fs-1 text-danger mb-3"></i>
+              <h6>Smartwatches</h6>
+              <a href="#" class="small text-primary">Ver 15 productos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto" class="contact-section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="fw-bold display-5 mb-3">¿Tienes dudas?</h2>
+            <p class="lead mb-4">Escríbenos y te atenderemos de inmediato</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+              <a href="https://wa.me/1234567890" class="btn btn-success btn-lg px-4">
+                <i class="bi bi-whatsapp me-2"></i>Chatear en WhatsApp
+              </a>
+              <a href="mailto:contacto@celulex.com" class="btn btn-outline-dark btn-lg px-4">
+                <i class="bi bi-envelope me-2"></i>contacto@celulex.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h4 class="fw-bold mb-3 brand-text"><i class="bi bi-laptop me-2"></i>CELULEX</h4>
+            <p class="text-muted">Tu tienda de confianza para tecnología. Encuentra los mejores dispositivos con garantía oficial y envío a todo el país.</p>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-primary fs-5"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-primary fs-5"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-success fs-5"><i class="bi bi-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h6 class="fw-bold mb-3">Categorías</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#celulares" class="text-muted text-decoration-none">Celulares</a></li>
+              <li class="mb-2"><a href="#computadoras" class="text-muted text-decoration-none">Laptops</a></li>
+              <li class="mb-2"><a href="#computadoras" class="text-muted text-decoration-none">PCs</a></li>
+              <li class="mb-2"><a href="#accesorios" class="text-muted text-decoration-none">Accesorios</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h6 class="fw-bold mb-3">Empresa</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Quiénes somos</a></li>
+              <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Términos</a></li>
+              <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Privacidad</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h6 class="fw-bold mb-3">Contacto</h6>
+            <ul class="list-unstyled text-muted">
+              <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Av. Principal 123, Ciudad</li>
+              <li class="mb-2"><i class="bi bi-telephone me-2"></i>+1 (234) 567-890</li>
+              <li class="mb-2"><i class="bi bi-envelope me-2"></i>contacto@celulex.com</li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="text-center text-muted">
+          <small>© 2026 CELULEX. Todos los derechos reservados.</small>
+        </div>
+      </div>
     </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+      <div class="cart-modal-content">
+        <div class="cart-modal-header">
+          <h5 class="mb-0"><i class="bi bi-cart3 me-2"></i>Tu Carrito</h5>
+          <button id="close-cart" class="btn-close"></button>
+        </div>
+        <div id="cart-items" class="cart-modal-body"></div>
+        <div class="cart-modal-footer">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="fw-bold">Total:</span>
+            <span id="cart-total" class="fs-4 fw-bold text-primary">$0.00</span>
+          </div>
+          <div class="d-flex gap-2">
+            <button id="clear-cart" class="btn btn-outline-secondary flex-grow-1">Vaciar</button>
+            <button id="checkout-btn" class="btn btn-primary flex-grow-1">
+              <i class="bi bi-credit-card me-2"></i>Finalizar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body p-4">
+            <input type="text" class="form-control form-control-lg border-0" placeholder="Buscar productos..." />
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
