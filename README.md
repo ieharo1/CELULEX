@@ -1,16 +1,12 @@
-# CELULEX - Ecommerce de celulares
+# CELULEX - Tienda de celulares
 
-Aplicación web hecha con **Node.js + Express**, **HTML5**, **Bootstrap 5**, JavaScript y CSS ligero.
+Aplicación web hecha con **Node.js + Express**, **HTML5**, **Bootstrap 5**, JavaScript y poco CSS.
 
 ## Características
-- Landing profesional y responsive.
-- Catálogo dinámico con filtros por marca, búsqueda y ordenamiento.
-- Vista de detalle de producto en modal.
-- Carrito funcional: agregar items, cambiar cantidad, eliminar, vaciar y ver total.
-- Checkout para usuarios finales con datos de cliente y método de pago.
-- Control de stock real al comprar.
-- Historial de pedidos recientes por sesión de usuario.
-- Panel de administración con login y CRUD de productos.
+- Página principal profesional y responsive para vender celulares.
+- Catálogo dinámico de productos.
+- Panel de administración con login.
+- CRUD completo de productos: agregar, editar y eliminar.
 
 ## Instalación
 ```bash
@@ -24,7 +20,7 @@ Abrir en el navegador: `http://localhost:3000`
 - Usuario: `admin`
 - Contraseña: `celulex123`
 
-Variables de entorno soportadas:
+Puedes cambiarlas por variables de entorno:
 - `ADMIN_USER`
 - `ADMIN_PASSWORD`
 - `SESSION_SECRET`
