@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CELULEX | Tienda de Celulares</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">CELULEX</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin">Administrador</a></li>
+            <li class="nav-item"><a class="btn btn-primary btn-sm" href="#catalogo">Comprar ahora</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero py-5">
+      <div class="container py-4">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <span class="badge text-bg-primary mb-3">Tienda profesional y segura</span>
+            <h1 class="display-5 fw-bold">Encuentra tu próximo celular al mejor precio</h1>
+            <p class="lead text-secondary">
+              Modelos premium, gama media y económicos de todas las marcas. Compra rápida con atención personalizada.
+            </p>
+            <a href="#catalogo" class="btn btn-dark btn-lg">Ver catálogo</a>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-card p-4 rounded-4">
+              <h2 class="h4">¿Por qué CELULEX?</h2>
+              <ul class="mb-0 mt-3">
+                <li>Garantía en todos los equipos</li>
+                <li>Entrega nacional</li>
+                <li>Asesoría para elegir el celular ideal</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="catalogo" class="container py-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Catálogo de celulares</h2>
+        <span id="counter" class="badge text-bg-secondary">0 productos</span>
+      </div>
+      <div id="products" class="row g-4"></div>
+    </main>
+
+    <footer class="py-4 border-top">
+      <div class="container text-center text-secondary small">© 2026 CELULEX. Todos los derechos reservados.</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
