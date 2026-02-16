@@ -25,11 +25,15 @@ Puedes cambiarlas por variables de entorno:
 - `ADMIN_PASSWORD`
 - `SESSION_SECRET`
 
+---
+
 ## 📄 Licencia
 
 MIT — contribuciones bienvenidas 🚀
 
 ---
+
+## 💻 Creado Por
 
 🧑‍💻 Isaac Haro
 
