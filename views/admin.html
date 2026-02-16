@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CELULEX Admin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">Panel de administración</h1>
+        <a href="/" class="btn btn-outline-secondary btn-sm">Volver a tienda</a>
+      </div>
+
+      <div id="authCard" class="card shadow-sm border-0 mb-4">
+        <div class="card-body p-4">
+          <h2 class="h5 mb-3">Iniciar sesión</h2>
+          <form id="loginForm" class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label">Usuario</label>
+              <input required type="text" class="form-control" name="username" placeholder="admin" />
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Contraseña</label>
+              <input required type="password" class="form-control" name="password" placeholder="••••••••" />
+            </div>
+            <div class="col-md-4 d-flex align-items-end">
+              <button class="btn btn-dark w-100" type="submit">Ingresar</button>
+            </div>
+          </form>
+          <p class="small text-muted mt-3 mb-0">Credenciales por defecto: admin / celulex123</p>
+        </div>
+      </div>
+
+      <section id="adminSection" class="d-none">
+        <div class="card shadow-sm border-0 mb-4">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 class="h5 mb-0">Agregar / editar producto</h2>
+              <button id="logoutBtn" class="btn btn-outline-danger btn-sm">Cerrar sesión</button>
+            </div>
+            <form id="productForm" class="row g-3">
+              <input type="hidden" name="id" />
+              <div class="col-md-6">
+                <label class="form-label">Nombre</label>
+                <input required name="name" class="form-control" />
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Marca</label>
+                <input required name="brand" class="form-control" />
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Precio (USD)</label>
+                <input required name="price" type="number" min="1" class="form-control" />
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Stock</label>
+                <input required name="stock" type="number" min="0" class="form-control" />
+              </div>
+              <div class="col-md-9">
+                <label class="form-label">URL imagen</label>
+                <input required name="image" type="url" class="form-control" />
+              </div>
+              <div class="col-12">
+                <label class="form-label">Descripción</label>
+                <textarea required name="description" rows="2" class="form-control"></textarea>
+              </div>
+              <div class="col-12 d-flex gap-2">
+                <button class="btn btn-primary" type="submit">Guardar producto</button>
+                <button id="cancelEdit" class="btn btn-outline-secondary d-none" type="button">Cancelar edición</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
+            <h2 class="h5">Productos registrados</h2>
+            <div class="table-responsive mt-3">
+              <table class="table align-middle">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="adminProducts"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/admin.js"></script>
+  </body>
+</html>
