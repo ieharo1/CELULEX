@@ -24,3 +24,18 @@ Puedes cambiarlas por variables de entorno:
 - `ADMIN_USER`
 - `ADMIN_PASSWORD`
 - `SESSION_SECRET`
+
+## 📄 Licencia
+
+MIT — contribuciones bienvenidas 🚀
+
+---
+
+🧑‍💻 Isaac Haro
+
+Ingeniero en Sistemas · Full Stack · Automatización · Data
+
+Isaac Esteban Haro Torres
+- 📧 zackharo1@gmail.com
+- 📱 098805517
+- 💻 [GitHub](https://github.com/ieharo1)
