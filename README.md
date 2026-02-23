@@ -113,7 +113,7 @@ http://localhost:3000
 💬 **Telegram:** @TST_Ecuador  
 📧 **Email:** negocios@tstsolutions.com.ec
 
-🌐 **Web:** https://tst-solutions.netlify.app/  
+🌐 **Web:** https://ieharo1.github.io/TST-SOLUTIONS/
 📘 **Facebook:** https://www.facebook.com/tstsolutionsecuador/  
 🐦 **Twitter/X:** https://x.com/SolutionsT95698
 
